@@ -63,7 +63,7 @@ app.use(
   }),
 );
 
-mongoose.connect(`mongodb+srv://taha123:${process.env.PASSWORD_USER}@contact-keeper-fpj5j.mongodb.net/test?retryWrites=true&w=majority`).then(()=>{app.listen(3000);}).catch(err=>{
+mongoose.connect(`mongodb+srv://taha123:${process.env.PASSWORD_USER}@contact-keeper-fpj5j.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`).then(()=>{app.listen(3000);}).catch(err=>{
   console.log(err);
 })
 
