@@ -59,7 +59,7 @@ app.use(
         })
 
         return event.save().then(result=>{
-          return {...result._doc};
+          return {...result._doc, _id: result._doc._id.toString()};
         }).catch(err=> {
           console.log(err);
           throw err;
