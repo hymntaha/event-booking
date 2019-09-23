@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const graphqlHttp = require('express-graphql');
 const { buildSchema } = require('graphql');
+const mongoose = require('mongoose');
+
 
 const app = express();
 
@@ -61,4 +63,9 @@ app.use(
   }),
 );
 
-app.listen(3000);
+mongoose.connect(`mongodb+srv://taha123:${process.env.PASSWORD_USER}@contact-keeper-fpj5j.mongodb.net/test?retryWrites=true&w=majority`).then(()=>{app.listen(3000);}).catch(err=>{
+  console.log(err);
+})
+
+
+
