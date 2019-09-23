@@ -51,9 +51,10 @@ app.use(
           title: args.title,
           description: args.description,
           price: +args.price,
-          date: new Date().toISOString()
+          date: args.date
         }
         events.push(event);
+        return event;
       }
     },
     graphiql: true
